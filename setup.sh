@@ -36,6 +36,4 @@ source venv/bin/activate
 # install the required python packages
 echo "Installing the required python packages..."
 pip3 install -r requirements.txt
-# install the required system packages
-echo "Installing the required system packages..."
-sudo apt-get install libsm6 libxext6 libxrender-dev
+
