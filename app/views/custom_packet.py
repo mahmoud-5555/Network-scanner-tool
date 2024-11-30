@@ -1,42 +1,83 @@
 import tkinter as tk
+from tkinter import ttk, scrolledtext
+import random
+from scapy.all import srp, Ether, IP, TCP, UDP, ICMP, Raw
+from models import network_scanner 
 
 
 class CustomPacketScreen(tk.Frame):
     def __init__(self, parent, controller):
-        from views.home import HomeScreen
-    
         super().__init__(parent)
 
-        label = tk.Label(self, text="Custom Packet Creation", font=("Helvetica", 20))
-        label.pack(pady=20)
+        self.controller = controller
 
-        # Input fields for custom packet
-        tk.Label(self, text="Destination IP Address:").pack(pady=5)
-        self.ip_entry = tk.Entry(self, width=30)
-        self.ip_entry.pack(pady=5)
+        # Title
+        tk.Label(self, text="Custom Packet Creator", font=("Arial", 18)).pack(pady=10)
 
-        tk.Label(self, text="Protocol (e.g., ICMP, TCP):").pack(pady=5)
-        self.protocol_entry = tk.Entry(self, width=30)
-        self.protocol_entry.pack(pady=5)
+        # Destination IP input
+        tk.Label(self, text="Destination IP:").pack(anchor="w", padx=20)
+        self.dst_ip_entry = tk.Entry(self, width=30)
+        self.dst_ip_entry.pack(padx=20, pady=5)
 
-        tk.Label(self, text="Port (if applicable):").pack(pady=5)
-        self.port_entry = tk.Entry(self, width=30)
-        self.port_entry.pack(pady=5)
+        # Packet Type dropdown
+        tk.Label(self, text="Packet Type:").pack(anchor="w", padx=20)
+        self.packet_type_var = tk.StringVar()
+        self.packet_type_var.set("ICMP")  # Default value
+        ttk.OptionMenu(self, self.packet_type_var, "ICMP", "TCP SYN", "UDP", "Custom").pack(padx=20, pady=5)
 
-        tk.Button(self, text="Send Packet", 
-                  command=self.send_packet).pack(pady=10)
+        # Source Port input
+        tk.Label(self, text="Source Port (optional):").pack(anchor="w", padx=20)
+        self.src_port_entry = tk.Entry(self, width=30)
+        self.src_port_entry.pack(padx=20, pady=5)
 
-        tk.Button(self, text="Back", 
-                  command=lambda: controller.show_frame(HomeScreen)).pack(pady=10)
+        # Destination Port input
+        tk.Label(self, text="Destination Port (optional):").pack(anchor="w", padx=20)
+        self.dst_port_entry = tk.Entry(self, width=30)
+        self.dst_port_entry.pack(padx=20, pady=5)
 
-        self.result_label = tk.Label(self, text="", font=("Helvetica", 12))
-        self.result_label.pack(pady=10)
+        # Payload input
+        tk.Label(self, text="Payload (optional):").pack(anchor="w", padx=20)
+        self.payload_entry = tk.Text(self, width=50, height=5)
+        self.payload_entry.pack(padx=20, pady=5)
+
+        # Send Packet button
+        tk.Button(self, text="Send Packet", command=self.send_packet).pack(pady=10)
+
+        # Output area
+        tk.Label(self, text="Output:").pack(anchor="w", padx=20)
+        self.output_text = scrolledtext.ScrolledText(self, width=80, height=20)
+        self.output_text.pack(padx=20, pady=10)
 
     def send_packet(self):
-        # Placeholder for sending the packet logic
-        ip = self.ip_entry.get()
-        protocol = self.protocol_entry.get()
-        port = self.port_entry.get()
-        self.result_label.config(
-            text=f"Sending {protocol} packet to {ip}:{port if port else 'N/A'} (Placeholder)"
-        )
+        # Get user inputs
+        dst_ip = self.dst_ip_entry.get().strip()
+        packet_type = self.packet_type_var.get()
+        src_port = self.src_port_entry.get().strip()
+        dst_port = self.dst_port_entry.get().strip()
+        payload = self.payload_entry.get("1.0", tk.END).strip()
+
+        # Validate inputs
+        if not dst_ip:
+            self.output_text.insert(tk.END, "[!] Destination IP is required.\n")
+            return
+
+        src_port = int(src_port) if src_port else None
+        dst_port = int(dst_port) if dst_port else None
+        payload = payload if payload else None
+
+        try:
+            # Call the function to create and send a packet
+            sent_packets, received_packets = network_scanner.create_and_send_packet(
+                dst_ip=dst_ip,
+                packet_type=packet_type.lower(),
+                src_port=src_port,
+                dst_port=dst_port,
+                payload=payload
+            )
+
+            # Display results in the output text box
+            self.output_text.insert(tk.END, f"[+] Sent packets: {sent_packets}\n")
+            self.output_text.insert(tk.END, f"[+] Received packets: {received_packets}\n")
+
+        except Exception as e:
+            self.output_text.insert(tk.END, f"[!] Error: {e}\n")

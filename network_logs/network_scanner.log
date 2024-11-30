@@ -1,0 +1,51 @@
+2024-11-30 03:28:10 - network_scanner - INFO - Using interface: br-25d5e6d47089
+2024-11-30 03:28:10 - network_scanner - INFO - Capture filter: host 192.168.1.7
+2024-11-30 03:28:10 - network_scanner - INFO - Logging packets to: network_logs/packet_capture_20241130_032810.pcap
+2024-11-30 03:28:10 - network_scanner - ERROR - Packet capture error: Interface 'br-25d5e6d47089' not found !
+2024-11-30 03:28:44 - network_scanner - INFO - Using interface: br-25d5e6d47089
+2024-11-30 03:28:44 - network_scanner - INFO - Capture filter: host 192.168.1.7 tcp
+2024-11-30 03:28:44 - network_scanner - INFO - Logging packets to: network_logs/packet_capture_20241130_032844.pcap
+2024-11-30 03:28:44 - network_scanner - ERROR - Packet capture error: Interface 'br-25d5e6d47089' not found !
+2024-11-30 03:28:50 - network_scanner - INFO - Using interface: br-25d5e6d47089
+2024-11-30 03:28:50 - network_scanner - INFO - Capture filter: host 192.168.1.7 tcp
+2024-11-30 03:28:50 - network_scanner - INFO - Logging packets to: network_logs/packet_capture_20241130_032850.pcap
+2024-11-30 03:28:50 - network_scanner - ERROR - Packet capture error: Interface 'br-25d5e6d47089' not found !
+2024-11-30 03:28:51 - network_scanner - INFO - Using interface: br-25d5e6d47089
+2024-11-30 03:28:51 - network_scanner - INFO - Capture filter: host 192.168.1.7 tcp
+2024-11-30 03:28:51 - network_scanner - INFO - Logging packets to: network_logs/packet_capture_20241130_032851.pcap
+2024-11-30 03:28:51 - network_scanner - ERROR - Packet capture error: Interface 'br-25d5e6d47089' not found !
+2024-11-30 03:28:59 - network_scanner - INFO - Using interface: br-25d5e6d47089
+2024-11-30 03:28:59 - network_scanner - INFO - Capture filter: host 192.168.1.7 tcp
+2024-11-30 03:28:59 - network_scanner - INFO - Logging packets to: network_logs/packet_capture_20241130_032859.pcap
+2024-11-30 03:28:59 - network_scanner - ERROR - Packet capture error: Interface 'br-25d5e6d47089' not found !
+2024-11-30 03:29:00 - network_scanner - INFO - Using interface: br-25d5e6d47089
+2024-11-30 03:29:00 - network_scanner - INFO - Capture filter: host 192.168.1.7 tcp
+2024-11-30 03:29:00 - network_scanner - INFO - Logging packets to: network_logs/packet_capture_20241130_032900.pcap
+2024-11-30 03:29:00 - network_scanner - ERROR - Packet capture error: Interface 'br-25d5e6d47089' not found !
+2024-11-30 03:29:03 - network_scanner - INFO - Using interface: br-25d5e6d47089
+2024-11-30 03:29:03 - network_scanner - INFO - Capture filter: host 192.168.1.7 tcp
+2024-11-30 03:29:03 - network_scanner - INFO - Logging packets to: network_logs/packet_capture_20241130_032903.pcap
+2024-11-30 03:29:04 - network_scanner - ERROR - Packet capture error: Interface 'br-25d5e6d47089' not found !
+2024-11-30 03:29:04 - network_scanner - INFO - Using interface: br-25d5e6d47089
+2024-11-30 03:29:04 - network_scanner - INFO - Capture filter: host 192.168.1.7 tcp
+2024-11-30 03:29:04 - network_scanner - INFO - Logging packets to: network_logs/packet_capture_20241130_032904.pcap
+2024-11-30 03:29:04 - network_scanner - ERROR - Packet capture error: Interface 'br-25d5e6d47089' not found !
+2024-11-30 04:04:30 - network_scanner - INFO - Creating TCP SYN packet to 192.168.1.4
+2024-11-30 04:04:30 - network_scanner - ERROR - Unsupported packet type: tcp syn
+2024-11-30 05:56:00 - network_scanner - INFO - Performing ARP scan on subnet: 10.9.0.0/24
+2024-11-30 06:23:04 - network_scanner - INFO - Starting network performance measurement...
+2024-11-30 06:23:14 - network_scanner - WARNING - Ping failed.
+2024-11-30 06:23:24 - network_scanner - WARNING - Ping failed.
+2024-11-30 06:23:34 - network_scanner - WARNING - Ping failed.
+2024-11-30 06:23:44 - network_scanner - WARNING - Ping failed.
+2024-11-30 06:23:54 - network_scanner - WARNING - Ping failed.
+2024-11-30 06:23:54 - network_scanner - ERROR - Error measuring network performance: module 'speedtest' has no attribute 'Speedtest'
+2024-11-30 06:23:54 - network_scanner - INFO - Network performance metrics logged to: network_logs/network_performance.json
+2024-11-30 06:25:51 - network_scanner - INFO - Starting network performance measurement...
+2024-11-30 06:25:54 - network_scanner - WARNING - Ping failed.
+2024-11-30 06:25:57 - network_scanner - WARNING - Ping failed.
+2024-11-30 06:26:01 - network_scanner - WARNING - Ping failed.
+2024-11-30 06:26:04 - network_scanner - WARNING - Ping failed.
+2024-11-30 06:26:07 - network_scanner - WARNING - Ping failed.
+2024-11-30 06:26:07 - network_scanner - ERROR - Error measuring network performance: module 'speedtest' has no attribute 'Speedtest'
+2024-11-30 06:26:07 - network_scanner - INFO - Network performance metrics logged to: network_logs/network_performance.json

@@ -1,0 +1,6 @@
+2024-11-30 06:23:04,525 - INFO - Starting network performance measurement...
+2024-11-30 06:23:54,556 - INFO - Network Performance: Download: 0.00 Mbps, Upload: 0.00 Mbps, Latency: [], Jitter: 0.00 ms
+2024-11-30 06:23:54,557 - INFO - Network performance metrics logged to: logs/network_performance.json
+2024-11-30 06:25:51,747 - INFO - Starting network performance measurement...
+2024-11-30 06:26:07,150 - INFO - Network Performance: Download: 0.00 Mbps, Upload: 0.00 Mbps, Latency: [], Jitter: 0.00 ms
+2024-11-30 06:26:07,151 - INFO - Network performance metrics logged to: logs/network_performance.json

@@ -3,7 +3,7 @@ from tkinter import ttk, scrolledtext
 import threading
 import json
 from scapy.all import conf
-from models.NetworkScanne import NetworkScanner
+from models import network_scanner
 
 class AnalysisScreen(tk.Frame):
     def __init__(self, parent, controller):
@@ -69,7 +69,6 @@ class AnalysisScreen(tk.Frame):
         ).start()
 
     def run_packet_capture(self, target_ip, protocol, duration, packet_count):
-        network_scanner = NetworkScanner()
         try:
             # Call the packet_capture method from the controller's NetworkScanner instance
             results, json_output = network_scanner.packet_capture(

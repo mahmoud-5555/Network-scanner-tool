@@ -2,10 +2,8 @@ import tkinter as tk
 from tkinter import ttk
 from scapy.all import conf
 import threading
-from models.NetworkScanne import NetworkScanner
+from models import network_scanner
 
-
-scanner = NetworkScanner()
 
 class DiscoveryScreen(tk.Frame):
     def __init__(self, parent, controller):
@@ -49,11 +47,11 @@ class DiscoveryScreen(tk.Frame):
             return
         
         # Update scanner's subnet
-        scanner.subnet = subnet
+        network_scanner.subnet = subnet
         
         try:
             # Perform the ARP scan
-            results, formatted_table = scanner.arp_scan()
+            results, formatted_table = network_scanner.arp_scan()
             
             # Update Treeview with results
             self.results_tree.delete(*self.results_tree.get_children())  # Clear previous results
