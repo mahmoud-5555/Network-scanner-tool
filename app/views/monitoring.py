@@ -4,7 +4,7 @@ import tkinter as tk
 class MonitoringScreen(tk.Frame):
     def __init__(self, parent, controller):
         from views.home import HomeScreen
-        
+    
         super().__init__(parent)
 
         label = tk.Label(self, text="Traffic Monitoring", font=("Helvetica", 20))

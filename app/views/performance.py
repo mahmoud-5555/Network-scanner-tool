@@ -4,7 +4,7 @@ import tkinter as tk
 class PerformanceScreen(tk.Frame):
     def __init__(self, parent, controller):
         from views.home import HomeScreen
-        
+
         super().__init__(parent)
 
         label = tk.Label(self, text="Performance Metrics", font=("Helvetica", 20))
@@ -20,7 +20,7 @@ class PerformanceScreen(tk.Frame):
         # Button to save metrics to a file
         tk.Button(self, text="Save Metrics to File", command=self.save_metrics).pack(pady=10)
 
-        tk.Button(self, text="Back", 
+        tk.Button(self, text="Back",
                   command=lambda: controller.show_frame(HomeScreen)).pack(pady=10)
 
     def calculate_metrics(self):

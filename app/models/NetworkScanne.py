@@ -5,7 +5,7 @@ import json
 
 
 class NetworkScanner:
-    def _init_(self, subnet='10.9.0.0/24'):
+    def __init__(self, subnet='10.9.0.0/24'):
         # Configure scapy for non-root packet capture
         scapy.conf.promisc = True  # Enable promiscuous mode
         self.subnet = subnet
