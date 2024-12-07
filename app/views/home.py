@@ -66,8 +66,8 @@ class HomeScreen(tk.Frame):
                   command=lambda: controller.show_frame(AnalysisScreen)).pack(pady=10)
         tk.Button(self, text="Custom Packet", width=20, 
                   command=lambda: controller.show_frame(CustomPacketScreen)).pack(pady=10)
-        tk.Button(self, text="Traffic Monitoring", width=20, 
-                  command=lambda: controller.show_frame(MonitoringScreen)).pack(pady=10)
+        # tk.Button(self, text="Traffic Monitoring", width=20, 
+        #           command=lambda: controller.show_frame(MonitoringScreen)).pack(pady=10)
         tk.Button(self, text="Performance Metrics", width=20, 
                   command=lambda: controller.show_frame(PerformanceScreen)).pack(pady=10)
 
