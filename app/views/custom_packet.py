@@ -64,6 +64,21 @@ class CustomPacketScreen(tk.Frame):
             self.output_text.insert(tk.END, "[!] Destination IP is required.\n")
             return
 
+        if packet_type == "TCP SYN" and not dst_port:
+            self.output_text.insert(tk.END, "[!] Destination Port is required for TCP SYN packets.\n")
+            return
+        elif packet_type == "UDP" and not dst_port:
+            self.output_text.insert(tk.END, "[!] Destination Port is required for UDP packets.\n")
+            return
+    
+        elif packet_type == "TCP SYN" and dst_port:
+            packet_type = 'tcp_syn'
+
+        elif packet_type == "Custom" and not payload:
+            self.output_text.insert(tk.END, "[!] Payload is required for Custom packets.\n")
+            return
+        
+
         src_port = int(src_port) if src_port else None
         dst_port = int(dst_port) if dst_port else None
         payload = payload if payload else None

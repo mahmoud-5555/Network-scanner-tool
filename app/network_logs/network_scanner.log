@@ -39,3 +39,5 @@
 2024-12-07 18:13:12 - network_scanner - WARNING - Ping failed.
 2024-12-07 18:13:12 - network_scanner - ERROR - Error measuring network performance: module 'speedtest' has no attribute 'Speedtest'
 2024-12-07 18:13:12 - network_scanner - INFO - Network performance metrics logged to: network_logs/network_performance.json
+2024-12-07 19:06:08 - network_scanner - INFO - Creating TCP SYN packet to 192.168.1.1
+2024-12-07 19:06:08 - network_scanner - ERROR - Unsupported packet type: tcp syn
