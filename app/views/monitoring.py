@@ -5,7 +5,9 @@ from tkinter import ttk, messagebox
 from models import network_scanner
 
 class MonitoringScreen(tk.Frame):
-    def __init__(self, parent, log_dir="logs"):
+    def __init__(self, parent, controller, log_dir="logs"):
+        from views.home import HomeScreen
+    
         super().__init__(parent)
         self.parent = parent
         self.log_dir = log_dir
@@ -13,6 +15,8 @@ class MonitoringScreen(tk.Frame):
 
         # Set up the frame layout
         self.create_widgets()
+        home_button = tk.Button(self, text="Back to Home", command=lambda: controller.show_frame(HomeScreen))
+        home_button.pack(pady=10)
 
     def create_widgets(self):
         """Set up GUI components for logging management."""
@@ -45,6 +49,7 @@ class MonitoringScreen(tk.Frame):
         self.log_level_combo.grid(row=2, column=1, padx=5, pady=5)
 
         ttk.Button(logger_frame, text="Configure Logger", command=network_scanner._configure_logger).grid(row=3, column=0, columnspan=2, pady=10)
+        
 
         # Log Display
         log_display_frame = ttk.LabelFrame(self, text="Log Output")

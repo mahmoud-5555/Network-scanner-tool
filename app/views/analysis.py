@@ -7,6 +7,8 @@ from models import network_scanner
 
 class AnalysisScreen(tk.Frame):
     def __init__(self, parent, controller):
+        from views.home import HomeScreen
+
         super().__init__(parent)
         
         self.controller = controller
@@ -23,7 +25,7 @@ class AnalysisScreen(tk.Frame):
         tk.Label(self, text="Protocol:").pack(anchor="w", padx=20)
         self.protocol_var = tk.StringVar()
         self.protocol_var.set("None")  # Default value
-        ttk.OptionMenu(self, self.protocol_var, "None", "TCP", "UDP", "ICMP").pack(padx=20, pady=5)
+        ttk.OptionMenu(self, self.protocol_var, "None" ,"None", "TCP", "UDP", "ICMP").pack(padx=20, pady=5)
 
         # Duration input
         tk.Label(self, text="Duration (seconds):").pack(anchor="w", padx=20)
@@ -39,6 +41,8 @@ class AnalysisScreen(tk.Frame):
 
         # Start capture button
         tk.Button(self, text="Start Capture", command=self.start_capture).pack(pady=10)
+        home_button = tk.Button(self, text="Back to Home", command=lambda: controller.show_frame(HomeScreen))
+        home_button.pack(pady=10)
 
         # Output area
         tk.Label(self, text="Captured Packets:").pack(anchor="w", padx=20)

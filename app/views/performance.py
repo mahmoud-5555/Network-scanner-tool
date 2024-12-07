@@ -6,6 +6,8 @@ from models import network_scanner
 
 class PerformanceScreen(tk.Frame):
     def __init__(self, parent, controller):
+        from views.home import HomeScreen
+
         super().__init__(parent)
         self.controller = controller
         self.log_dir = "logs"
@@ -29,6 +31,8 @@ class PerformanceScreen(tk.Frame):
 
         # Measure Performance button
         tk.Button(self, text="Measure Performance", command=self.measure_network_performance).pack(pady=10)
+        home_button = tk.Button(self, text="Back to Home", command=lambda: controller.show_frame(HomeScreen))
+        home_button.pack(pady=10)
 
         # Output area
         tk.Label(self, text="Output:").pack(anchor="w", padx=20)

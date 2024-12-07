@@ -7,6 +7,8 @@ from models import network_scanner
 
 class DiscoveryScreen(tk.Frame):
     def __init__(self, parent, controller):
+        from views.home import HomeScreen
+
         super().__init__(parent)
         
         # Title label
@@ -23,6 +25,8 @@ class DiscoveryScreen(tk.Frame):
         # Button to trigger ARP scan
         scan_button = tk.Button(self, text="Start ARP Scan", command=self.run_scan)
         scan_button.pack(pady=10)
+        home_button = tk.Button(self, text="Back to Home", command=lambda: controller.show_frame(HomeScreen))
+        home_button.pack(pady=10)
         
         # Treeview to display results
         self.results_tree = ttk.Treeview(self, columns=("IP Address", "MAC Address"), show="headings")

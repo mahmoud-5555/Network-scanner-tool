@@ -7,6 +7,7 @@ from models import network_scanner
 
 class CustomPacketScreen(tk.Frame):
     def __init__(self, parent, controller):
+        from views.home import HomeScreen
         super().__init__(parent)
 
         self.controller = controller
@@ -23,7 +24,7 @@ class CustomPacketScreen(tk.Frame):
         tk.Label(self, text="Packet Type:").pack(anchor="w", padx=20)
         self.packet_type_var = tk.StringVar()
         self.packet_type_var.set("ICMP")  # Default value
-        ttk.OptionMenu(self, self.packet_type_var, "ICMP", "TCP SYN", "UDP", "Custom").pack(padx=20, pady=5)
+        ttk.OptionMenu(self, self.packet_type_var, "ICMP", "ICMP", "TCP SYN", "UDP", "Custom").pack(padx=20, pady=5)
 
         # Source Port input
         tk.Label(self, text="Source Port (optional):").pack(anchor="w", padx=20)
@@ -42,6 +43,8 @@ class CustomPacketScreen(tk.Frame):
 
         # Send Packet button
         tk.Button(self, text="Send Packet", command=self.send_packet).pack(pady=10)
+        home_button = tk.Button(self, text="Back to Home", command=lambda: controller.show_frame(HomeScreen))
+        home_button.pack(pady=10)
 
         # Output area
         tk.Label(self, text="Output:").pack(anchor="w", padx=20)

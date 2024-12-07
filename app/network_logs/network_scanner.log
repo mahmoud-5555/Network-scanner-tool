@@ -1,0 +1,41 @@
+2024-12-07 16:55:28 - network_scanner - INFO - Performing ARP scan on subnet: 10.9.0.0/24
+2024-12-07 16:55:31 - network_scanner - INFO - Performing ARP scan on subnet: 10.9.0.0/24
+2024-12-07 16:55:31 - network_scanner - INFO - Performing ARP scan on subnet: 10.9.0.0/24
+2024-12-07 16:55:32 - network_scanner - INFO - Performing ARP scan on subnet: 10.9.0.0/24
+2024-12-07 16:55:32 - network_scanner - INFO - Performing ARP scan on subnet: 10.9.0.0/24
+2024-12-07 16:55:32 - network_scanner - INFO - Performing ARP scan on subnet: 10.9.0.0/24
+2024-12-07 17:07:02 - network_scanner - INFO - Performing ARP scan on subnet: 10.9.0.0/24
+2024-12-07 17:08:32 - network_scanner - INFO - Using interface: br-38d62cca91d8
+2024-12-07 17:08:32 - network_scanner - INFO - Capture filter: host 192.168.1.1 icmp
+2024-12-07 17:08:32 - network_scanner - INFO - Logging packets to: network_logs/packet_capture_20241207_170832.pcap
+2024-12-07 17:08:32 - network_scanner - ERROR - Packet capture error: Interface 'br-38d62cca91d8' not found !
+2024-12-07 17:30:40 - network_scanner - INFO - Performing ARP scan on subnet: 192.168.1.0/24
+2024-12-07 17:31:02 - network_scanner - INFO - Performing ARP scan on subnet: 192.168.1.0/24
+2024-12-07 17:31:03 - network_scanner - INFO - Performing ARP scan on subnet: 192.168.1.0/24
+2024-12-07 17:31:03 - network_scanner - INFO - Performing ARP scan on subnet: 192.168.1.0/24
+2024-12-07 17:31:03 - network_scanner - INFO - Performing ARP scan on subnet: 192.168.1.0/24
+2024-12-07 17:32:06 - network_scanner - INFO - Performing ARP scan on subnet: 192.168.1.0/24
+2024-12-07 17:32:32 - network_scanner - INFO - Performing ARP scan on subnet: 192.168.1.0/24
+2024-12-07 17:32:33 - network_scanner - INFO - Performing ARP scan on subnet: 192.168.1.0/24
+2024-12-07 17:32:34 - network_scanner - INFO - Performing ARP scan on subnet: 192.168.1.0/24
+2024-12-07 17:32:34 - network_scanner - INFO - Performing ARP scan on subnet: 192.168.1.0/24
+2024-12-07 17:44:51 - network_scanner - INFO - Using interface: br-38d62cca91d8
+2024-12-07 17:44:51 - network_scanner - INFO - Capture filter: host 192.168.1.4 tcp
+2024-12-07 17:44:51 - network_scanner - INFO - Logging packets to: network_logs/packet_capture_20241207_174451.pcap
+2024-12-07 17:44:51 - network_scanner - ERROR - Packet capture error: Interface 'br-38d62cca91d8' not found !
+2024-12-07 17:44:56 - network_scanner - INFO - Using interface: br-38d62cca91d8
+2024-12-07 17:44:56 - network_scanner - INFO - Capture filter: host 192.168.1.4 udp
+2024-12-07 17:44:56 - network_scanner - INFO - Logging packets to: network_logs/packet_capture_20241207_174456.pcap
+2024-12-07 17:44:56 - network_scanner - ERROR - Packet capture error: Interface 'br-38d62cca91d8' not found !
+2024-12-07 17:45:14 - network_scanner - INFO - Using interface: br-38d62cca91d8
+2024-12-07 17:45:14 - network_scanner - INFO - Capture filter: host 192.168.1.4 icmp
+2024-12-07 17:45:14 - network_scanner - INFO - Logging packets to: network_logs/packet_capture_20241207_174514.pcap
+2024-12-07 17:45:14 - network_scanner - ERROR - Packet capture error: Interface 'br-38d62cca91d8' not found !
+2024-12-07 18:12:57 - network_scanner - INFO - Starting network performance measurement...
+2024-12-07 18:13:00 - network_scanner - WARNING - Ping failed.
+2024-12-07 18:13:03 - network_scanner - WARNING - Ping failed.
+2024-12-07 18:13:06 - network_scanner - WARNING - Ping failed.
+2024-12-07 18:13:09 - network_scanner - WARNING - Ping failed.
+2024-12-07 18:13:12 - network_scanner - WARNING - Ping failed.
+2024-12-07 18:13:12 - network_scanner - ERROR - Error measuring network performance: module 'speedtest' has no attribute 'Speedtest'
+2024-12-07 18:13:12 - network_scanner - INFO - Network performance metrics logged to: network_logs/network_performance.json
